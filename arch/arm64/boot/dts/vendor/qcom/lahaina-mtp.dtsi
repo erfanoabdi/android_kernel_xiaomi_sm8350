@@ -3,6 +3,7 @@
 
 #include "lahaina-pmic-overlay.dtsi"
 #include "lahaina-thermal-overlay.dtsi"
+#include "display/lahaina-sde-display-mtp.dtsi"
 
 &spmi_debug_bus {
 	status = "ok";
@@ -210,3 +211,5 @@
 				&nfc_clk_req_suspend &nfc_fwdl_suspend>;
 	};
 };
+
+#include "camera/lahaina-camera-sensor-mtp.dtsi"

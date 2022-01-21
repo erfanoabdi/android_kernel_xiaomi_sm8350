@@ -5615,6 +5615,8 @@
 #include "lahaina-cvp.dtsi"
 #include "lahaina-pcie.dtsi"
 #include "msm-qvr-external.dtsi"
+#include "display/lahaina-sde.dtsi"
+#include "camera/lahaina-camera.dtsi"
 
 &pcie0_rp {
 	#address-cells = <5>;
