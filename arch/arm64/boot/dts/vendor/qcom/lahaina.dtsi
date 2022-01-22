@@ -547,6 +547,12 @@
 		splash_memory:splash_region {
 			reg = <0x0 0xe2a00000 0x0 0x02300000>;
 			label = "cont_splash_region";
+			no-map;
+		};
+
+		framebuffer_region@dfc00000 {
+			reg = <0x0 0xdfc00000 0x0 0x02300000>;
+			no-map;
 		};
 
 		dfps_data_memory: dfps_data_region {
@@ -577,7 +583,21 @@
 	};
 
 	chosen {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		ranges;
+		
 		bootargs = "log_buf_len=256K earlycon=msm_geni_serial,0x98c000 rcupdate.rcu_expedited=1 rcu_nocbs=0-7 cpufreq.default_governor=performance";
+		stdout-path = "display0";
+
+		framebuffer0: framebuffer@dfc00000 {
+			compatible = "simple-framebuffer";
+			reg = <0x0 0xdfc00000 0x0 0x02300000>;
+			width = <1080>;
+			height = <2400>;
+			stride = <(1080 * 4)>;
+			format = "a8r8g8b8";
+		};
 	};
 };
 
