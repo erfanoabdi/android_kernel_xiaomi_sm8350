@@ -82,26 +82,26 @@
 
 		channel@0 {
 			reg = <0>;
-			compatible = "qcom,neuron-channel-haven-shmem";
+			compatible = "qcom,neuron-channel-gunyah-shmem";
 			class = "message-queue";
 			direction = "send";
 			max-size = <0 65536>;
-			haven-label = <1>;
+			gunyah-label = <1>;
 		};
 
 		channel@1 {
 			reg = <1>;
-			compatible = "qcom,neuron-channel-haven-shmem";
+			compatible = "qcom,neuron-channel-gunyah-shmem";
 			class = "message-queue";
 			direction = "receive";
 			max-size = <0 65536>;
-			haven-label = <2>;
+			gunyah-label = <2>;
 		};
 	};
 
-	qrtr-haven {
-		compatible = "qcom,qrtr-haven";
-		haven-label = <3>;
+	qrtr-gunyah {
+		compatible = "qcom,qrtr-gunyah";
+		gunyah-label = <3>;
 	};
 
 	qcom,vm-config {
@@ -170,7 +170,7 @@
 			neuron-ch1-shm {
 				vdevice-type = "shm-doorbell";
 				generate = "/hypervisor/neuron-ch1-shm";
-				push-compatible = "qcom,neuron-channel-haven-shmem-gen";
+				push-compatible = "qcom,neuron-channel-gunyah-shmem-gen";
 				peer-default;
 				memory {
 					qcom,label = <0x1>;
@@ -181,7 +181,7 @@
 			neuron-ch2-shm {
 				vdevice-type = "shm-doorbell";
 				generate = "/hypervisor/neuron-ch2-shm";
-				push-compatible = "qcom,neuron-channel-haven-shmem-gen";
+				push-compatible = "qcom,neuron-channel-gunyah-shmem-gen";
 				peer-default;
 				memory {
 					qcom,label = <0x2>;
@@ -192,7 +192,7 @@
 			qrtr-shm {
 				vdevice-type = "shm-doorbell";
 				generate = "/hypervisor/qrtr-shm";
-				push-compatible = "qcom,qrtr-haven-gen";
+				push-compatible = "qcom,qrtr-gunyah-gen";
 				peer-default;
 				memory {
 					qcom,label = <0x3>;
